@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character counter</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <section>
+        <div class="main">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h1 class="heading" style="color: #F5004F;">Real-Time Character Counter</h1>
+                    </div>
+                    <div class="col">
+                        <input type="text"placeholder="   Please write yout text here......" class="input" id="input-tag">
+                    </div>
+                    <div class="col3">
+                        <div class="tag1">
+                            <h4>Total Character :<p class="count" ></p></h4>
+                        </div>
+                        <div class="tag2">
+                            <h4>Remaining :<p class="Remaining-count"></p></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+    document.getElementById('input-tag').addEventListener('input', function () {
+    let inputText = this.value;
+    let totalCount = inputText.length;
+    let remainingCount = 50 - totalCount;
+
+    document.querySelector('.count').textContent = totalCount;
+    document.querySelector('.Remaining-count').textContent = remainingCount;
+
+    if (totalCount > 50) {
+        alert('Limit exceeded');
+        document.querySelector('.remaining-count').textContent = 0;
+        }
+    });
+
+    </script>
+</body>
+</html>
